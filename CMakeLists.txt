@@ -12,7 +12,7 @@ if(WIN32)
     set(Boost_USE_MULTITHREADED ON)
 endif()
 
-find_package(Boost COMPONENTS system REQUIRED)
+find_package(Boost COMPONENTS system program_options REQUIRED)
 find_package(Threads)
 
 aux_source_directory(. SRC_LIST)
