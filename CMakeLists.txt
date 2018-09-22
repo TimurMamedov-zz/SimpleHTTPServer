@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 if(DEFINED ENV{TRAVIS_BUILD_NUMBER})
     project(SimpleHTTPServer VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
-    project(SimpleHTTPServer VERSION 0.0.1)
+    project(final VERSION 0.0.1)
 endif()
 
 if(WIN32)
