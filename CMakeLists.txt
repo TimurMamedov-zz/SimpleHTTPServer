@@ -22,7 +22,7 @@ add_executable(${PROJECT_NAME} ${SRC_LIST} connection.h connection_manager.h
     join_threads.h thread_pool.h threadsafe_queue.h)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
-        CXX_STANDARD 14
+        CXX_STANDARD 11
         CXX_STANDARD_REQUIRED ON
 #        COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
         COMPILE_OPTIONS -Wpedantic -Wall -Wextra
