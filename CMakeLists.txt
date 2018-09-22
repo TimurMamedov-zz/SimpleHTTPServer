@@ -20,7 +20,7 @@ aux_source_directory(. SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST} connection.h connection_manager.h
     header.h mime_types.h reply.h request.h request_handler.h request_parser.h server.h
     join_threads.h thread_pool.h threadsafe_queue.h)
-
+add_compile_options(-std=c++11)
 set_target_properties(${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 11
         CXX_STANDARD_REQUIRED ON
