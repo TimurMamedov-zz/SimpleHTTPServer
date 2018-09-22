@@ -7,6 +7,8 @@
 #include "connection_manager.h"
 #include "request_handler.h"
 
+#include "thread_pool.h"
+
 namespace http {
 namespace server {
 
@@ -48,6 +50,8 @@ private:
     request_handler request_handler_;
 
     boost::asio::ip::tcp::socket socket;
+
+    thread_pool& pool;
 };
 
 } // namespace server

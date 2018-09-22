@@ -27,6 +27,8 @@ public:
     /// Stop all connections.
     void stop_all();
 
+    std::size_t getConnectionsSize();
+
 private:
     /// The managed connections.
     std::set<connection_ptr> connections_;

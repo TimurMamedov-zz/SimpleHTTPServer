@@ -26,5 +26,10 @@ void connection_manager::stop_all()
     connections_.clear();
 }
 
+std::size_t connection_manager::getConnectionsSize()
+{
+    return connections_.size();
+}
+
 } // namespace server
 } // namespace http

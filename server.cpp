@@ -12,7 +12,8 @@ server::server(const std::string& address, const std::size_t &port,
       acceptor_(io_context_),
       socket(io_context_),
       connection_manager_(),
-      request_handler_(doc_root)
+      request_handler_(doc_root),
+      pool(thread_pool::getInstance())
 {
     // Register to handle the signals that indicate when the server should exit.
     // It is safe to register for the same signal multiple times in a program,
@@ -62,7 +63,8 @@ void server::do_accept()
         if (!ec)
         {
             connection_manager_.start(std::make_shared<connection>(
-                                          std::move(socket), connection_manager_, request_handler_));
+                                          std::move(socket), connection_manager_, request_handler_,
+                                          pool.getQueue(connection_manager_.getConnectionsSize() % pool.getThreadsSize())));
         }
 
         do_accept();

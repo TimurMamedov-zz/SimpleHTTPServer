@@ -18,7 +18,8 @@ find_package(Threads)
 aux_source_directory(. SRC_LIST)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST} connection.h connection_manager.h
-    header.h mime_types.h reply.h request.h request_handler.h request_parser.h server.h)
+    header.h mime_types.h reply.h request.h request_handler.h request_parser.h server.h
+    join_threads.h thread_pool.h threadsafe_queue.h)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
         CXX_STANDARD 14

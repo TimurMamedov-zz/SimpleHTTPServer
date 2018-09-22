@@ -2,6 +2,7 @@
 #include <string>
 #include <boost/asio.hpp>
 #include <boost/program_options.hpp>
+#include <thread>
 #include "server.h"
 
 namespace po = boost::program_options;
@@ -31,16 +32,44 @@ int main(int argc, char* argv[])
         po::store(po::parse_command_line(argc, argv, desc), vm);
         po::notify(vm);
 
-        std::cout << vm["address"].as<std::string>() << std::endl;
-        std::cout << vm["port"].as<std::size_t>() << std::endl;
-        std::cout << vm["directory"].as<std::string>() << std::endl;
-        // Initialise the server.
-        http::server::server s(vm["address"].as<std::string>(),
-                vm["port"].as<std::size_t>(),
-                vm["directory"].as<std::string>());
+        // создаем потомка
+        auto pid = fork();
 
-        // Run the server until stopped.
-        s.run();
+        if (pid == -1) // если не удалось запустить потомка
+        {
+            // выведем на экран ошибку и её описание
+            std::cout << "Error: Start Daemon failed \n";
+            return -1;
+        }
+        else if (!pid) // если это потомок
+        {
+            // данный код уже выполняется в процессе потомка
+            // разрешаем выставлять все биты прав на создаваемые файлы,
+            // иначе у нас могут быть проблемы с правами доступа
+            umask(0);
+
+            // создаём новый сеанс, чтобы не зависеть от родителя
+            setsid();
+
+            // переходим в корень диска, если мы этого не сделаем, то могут быть проблемы.
+            // к примеру с размантированием дисков
+            chdir("/");
+
+            // Initialise the server.
+            http::server::server s(vm["address"].as<std::string>(),
+                    vm["port"].as<std::size_t>(),
+                    vm["directory"].as<std::string>());
+
+            // Run the server until stopped.
+            std::thread t([&s](){ s.run(); });
+            s.run();
+            t.join();
+        }
+        else // если это родитель
+        {
+            // завершим процес, т.к. основную свою задачу (запуск демона) мы выполнили
+            return 0;
+        }
     }
     catch (std::exception& e)
     {

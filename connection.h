@@ -9,6 +9,8 @@
 #include "request_handler.h"
 #include "request_parser.h"
 
+#include "threadsafe_queue.h"
+
 namespace http {
 namespace server {
 
@@ -24,7 +26,8 @@ public:
 
     /// Construct a connection with the given socket.
     explicit connection(boost::asio::ip::tcp::socket socket,
-                        connection_manager& manager, request_handler& handler);
+                        connection_manager& manager, request_handler& handler,
+                        ThreadSave_Queue<std::function<void()> >& queue_);
 
     /// Start the first asynchronous operation for the connection.
     void start();
@@ -59,6 +62,8 @@ private:
 
     /// The reply to be sent back to the client.
     reply reply_;
+
+    ThreadSave_Queue<std::function<void()> >& queue;
 };
 
 typedef std::shared_ptr<connection> connection_ptr;
