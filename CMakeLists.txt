@@ -27,7 +27,7 @@ add_executable(${PROJECT_NAME} ${SRC_LIST} connection.h connection_manager.h
 #        COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
  #       COMPILE_OPTIONS -Wpedantic -Wall -Wextra
 #        )
-set(CMAKE_CXX_FLAGS "-std=c++14")
+set(CMAKE_CXX_FLAGS "-std=c++11")
 set_target_properties (${PROJECT_NAME} PROPERTIES
         INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
         )
