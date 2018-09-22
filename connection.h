@@ -3,6 +3,7 @@
 
 #include <array>
 #include <memory>
+#include <functional>
 #include <boost/asio.hpp>
 #include "reply.h"
 #include "request.h"
