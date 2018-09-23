@@ -21,6 +21,7 @@ int main(int argc, char* argv[])
             std::cerr << "    receiver 0::0 80 .\n";
             return 1;
         }
+        getopt(argc,argv,"ab:C::d");
 
         po::options_description desc("General options");
         desc.add_options()
