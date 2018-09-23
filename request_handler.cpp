@@ -32,6 +32,10 @@ void request_handler::handle_request(const request& req, reply& rep)
         return;
     }
 
+    auto param_pos = request_path.find('?');
+    if(param_pos != std::string::npos)
+        request_path.erase(param_pos);
+
     // If path ends in slash (i.e. is a directory) then add "index.html".
     if (request_path[request_path.size() - 1] == '/')
     {
