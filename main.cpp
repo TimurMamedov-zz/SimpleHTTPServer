@@ -21,7 +21,6 @@ int main(int argc, char* argv[])
             std::cerr << "    receiver 0::0 80 .\n";
             return 1;
         }
-        getopt(argc,argv,"ab:C::d");
 
         po::options_description desc("General options");
         desc.add_options()
@@ -33,6 +32,7 @@ int main(int argc, char* argv[])
         po::store(po::parse_command_line(argc, argv, desc), vm);
         po::notify(vm);
 
+#if !defined(WIN32) && !defined(YOUR_IOS_MACRO_HERE)
         // создаем потомка
         auto pid = fork();
 
@@ -71,6 +71,17 @@ int main(int argc, char* argv[])
             // завершим процес, т.к. основную свою задачу (запуск демона) мы выполнили
             return 0;
         }
+#elif defined(WIN32)
+        // Initialise the server.
+        http::server::server s(vm["address"].as<std::string>(),
+                vm["port"].as<std::size_t>(),
+                vm["directory"].as<std::string>());
+
+        // Run the server until stopped.
+        std::thread t([&s](){ s.run(); });
+        s.run();
+        t.join();
+#endif
     }
     catch (std::exception& e)
     {

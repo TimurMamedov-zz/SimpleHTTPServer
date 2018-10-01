@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.2)
 
 if(DEFINED ENV{TRAVIS_BUILD_NUMBER})
     project(SimpleHTTPServer VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
 else()
-    project(final)
+    project(SimpleHTTPServer)
 endif()
 
 if(WIN32)
@@ -20,14 +20,14 @@ aux_source_directory(. SRC_LIST)
 add_executable(${PROJECT_NAME} ${SRC_LIST} connection.h connection_manager.h
     header.h mime_types.h reply.h request.h request_handler.h request_parser.h server.h
     join_threads.h thread_pool.h threadsafe_queue.h)
-#add_compile_options(-std=c++11)
-#set_target_properties(${PROJECT_NAME} PROPERTIES
-#        CXX_STANDARD 11
-#        CXX_STANDARD_REQUIRED ON
-#        COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
- #       COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-#        )
-set(CMAKE_CXX_FLAGS "-std=c++11")
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        CXX_STANDARD 14
+        CXX_STANDARD_REQUIRED ON
+        COMPILE_DEFINITIONS BOOST_ASIO_ENABLE_HANDLER_TRACKING
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra
+        )
+#set(CMAKE_CXX_FLAGS "-std=c++11")//for CMake 2.8
 set_target_properties (${PROJECT_NAME} PROPERTIES
         INCLUDE_DIRECTORIES ${Boost_INCLUDE_DIR}
         )
@@ -41,14 +41,14 @@ target_link_libraries(${PROJECT_NAME}
         ${CMAKE_THREAD_LIBS_INIT}
         )
 
-#install(TARGETS SimpleHTTPServer RUNTIME DESTINATION bin)
+install(TARGETS SimpleHTTPServer RUNTIME DESTINATION bin)
 
-#set(CPACK_GENERATOR DEB)
+set(CPACK_GENERATOR DEB)
 
-#set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
-#set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
-#set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
 
-#set(CPACK_PACKAGE_CONTACT tima_mamedxp@mail.ru)
+set(CPACK_PACKAGE_CONTACT tima_mamedxp@mail.ru)
 
-#include(CPack)
+include(CPack)
