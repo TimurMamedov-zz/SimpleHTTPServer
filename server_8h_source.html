@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SimpleHTTPServer: Исходный файл server.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SimpleHTTPServer
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">server.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="server_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HTTP_SERVER_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HTTP_SERVER_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="connection_8h.html">connection.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="connection__manager_8h.html">connection_manager.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="request__handler_8h.html">request_handler.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8h.html">thread_pool.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>http {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>server {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classhttp_1_1server_1_1server.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhttp_1_1server_1_1server.html">server</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classhttp_1_1server_1_1server.html#a20ca39d866af49a959d13068973e158b">server</a>(<span class="keyword">const</span> <a class="code" href="classhttp_1_1server_1_1server.html">server</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classhttp_1_1server_1_1server.html">server</a>&amp; <a class="code" href="classhttp_1_1server_1_1server.html#afb5b688e8cdef0507706e6a728a0fa6f">operator=</a>(<span class="keyword">const</span> <a class="code" href="classhttp_1_1server_1_1server.html">server</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classhttp_1_1server_1_1server.html#a20ca39d866af49a959d13068973e158b">server</a>(<span class="keyword">const</span> std::string&amp; address, <span class="keyword">const</span> std::size_t&amp; port,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    <span class="keyword">const</span> std::string&amp; doc_root);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classhttp_1_1server_1_1server.html#aae3c85e95647003eef1c83e778204936">run</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> do_accept();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> do_await_stop();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    boost::asio::io_service io_context_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    boost::asio::signal_set signals_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    boost::asio::ip::tcp::acceptor acceptor_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classhttp_1_1server_1_1connection__manager.html">connection_manager</a> connection_manager_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classhttp_1_1server_1_1request__handler.html">request_handler</a> request_handler_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    boost::asio::ip::tcp::socket socket;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classthread__pool.html">thread_pool</a>&amp; pool;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace server</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace http</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif // HTTP_SERVER_HPP</span></div>
+<div class="ttc" id="connection_8h_html"><div class="ttname"><a href="connection_8h.html">connection.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1request__handler_html"><div class="ttname"><a href="classhttp_1_1server_1_1request__handler.html">http::server::request_handler</a></div><div class="ttdoc">The common handler for all incoming requests. </div><div class="ttdef"><b>Definition:</b> <a href="request__handler_8h_source.html#l00016">request_handler.h:16</a></div></div>
+<div class="ttc" id="classthread__pool_html"><div class="ttname"><a href="classthread__pool.html">thread_pool</a></div><div class="ttdoc">Thread pool for all connections. </div><div class="ttdef"><b>Definition:</b> <a href="thread__pool_8h_source.html#l00008">thread_pool.h:8</a></div></div>
+<div class="ttc" id="request__handler_8h_html"><div class="ttname"><a href="request__handler_8h.html">request_handler.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection__manager_html"><div class="ttname"><a href="classhttp_1_1server_1_1connection__manager.html">http::server::connection_manager</a></div><div class="ttdoc">Manages open connections so that they may be cleanly stopped when the server needs to shut down...</div><div class="ttdef"><b>Definition:</b> <a href="connection__manager_8h_source.html#l00014">connection_manager.h:14</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1server_html_a20ca39d866af49a959d13068973e158b"><div class="ttname"><a href="classhttp_1_1server_1_1server.html#a20ca39d866af49a959d13068973e158b">http::server::server::server</a></div><div class="ttdeci">server(const server &amp;)=delete</div></div>
+<div class="ttc" id="classhttp_1_1server_1_1server_html_aae3c85e95647003eef1c83e778204936"><div class="ttname"><a href="classhttp_1_1server_1_1server.html#aae3c85e95647003eef1c83e778204936">http::server::server::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Run the server&#39;s io_context loop. </div><div class="ttdef"><b>Definition:</b> <a href="server_8cpp_source.html#l00042">server.cpp:42</a></div></div>
+<div class="ttc" id="connection__manager_8h_html"><div class="ttname"><a href="connection__manager_8h.html">connection_manager.h</a></div></div>
+<div class="ttc" id="thread__pool_8h_html"><div class="ttname"><a href="thread__pool_8h.html">thread_pool.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1server_html"><div class="ttname"><a href="classhttp_1_1server_1_1server.html">http::server::server</a></div><div class="ttdoc">The top-level class of the HTTP server. </div><div class="ttdef"><b>Definition:</b> <a href="server_8h_source.html#l00018">server.h:18</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1server_html_afb5b688e8cdef0507706e6a728a0fa6f"><div class="ttname"><a href="classhttp_1_1server_1_1server.html#afb5b688e8cdef0507706e6a728a0fa6f">http::server::server::operator=</a></div><div class="ttdeci">server &amp; operator=(const server &amp;)=delete</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по SimpleHTTPServer. Последние изменения: Пн 1 Окт 2018 20:23:01. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

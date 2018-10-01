@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SimpleHTTPServer: Класс thread_pool</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SimpleHTTPServer
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="classthread__pool-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс thread_pool</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Thread pool for all connections.  
+ <a href="classthread__pool.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="thread__pool_8h_source.html">thread_pool.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса thread_pool:</div>
+<div class="dyncontent">
+<div class="center"><img src="classthread__pool__coll__graph.png" border="0" usemap="#thread__pool_coll__map" alt="Collaboration graph"/></div>
+<map name="thread__pool_coll__map" id="thread__pool_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a052b07a3f9b5433b778eb783e4eaecfd"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread__pool.html#a052b07a3f9b5433b778eb783e4eaecfd">getThreadsSize</a> ()</td></tr>
+<tr class="separator:a052b07a3f9b5433b778eb783e4eaecfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0be6714a6511fc1f410837fb8c641a55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classThreadSave__Queue.html">ThreadSave_Queue</a><br class="typebreak"/>
+&lt; std::function&lt; void()&gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread__pool.html#a0be6714a6511fc1f410837fb8c641a55">getQueue</a> (std::size_t index)</td></tr>
+<tr class="separator:a0be6714a6511fc1f410837fb8c641a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9d8f108fa2419441aba432f8ca98eae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread__pool.html#ac9d8f108fa2419441aba432f8ca98eae">~thread_pool</a> ()</td></tr>
+<tr class="separator:ac9d8f108fa2419441aba432f8ca98eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a7d2ee60b466bdc874bcae0e9ac72e242"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classthread__pool.html">thread_pool</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread__pool.html#a7d2ee60b466bdc874bcae0e9ac72e242">getInstance</a> ()</td></tr>
+<tr class="separator:a7d2ee60b466bdc874bcae0e9ac72e242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Thread pool for all connections. </p>
+
+<p>См. определение в файле <a class="el" href="thread__pool_8h_source.html">thread_pool.h</a> строка <a class="el" href="thread__pool_8h_source.html#l00008">8</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="ac9d8f108fa2419441aba432f8ca98eae"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">thread_pool::~thread_pool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="thread__pool_8h_source.html">thread_pool.h</a> строка <a class="el" href="thread__pool_8h_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a7d2ee60b466bdc874bcae0e9ac72e242"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classthread__pool.html">thread_pool</a>&amp; thread_pool::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="thread__pool_8h_source.html">thread_pool.h</a> строка <a class="el" href="thread__pool_8h_source.html#l00011">11</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0be6714a6511fc1f410837fb8c641a55"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classThreadSave__Queue.html">ThreadSave_Queue</a>&lt;std::function&lt;void()&gt; &gt;&amp; thread_pool::getQueue </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="thread__pool_8h_source.html">thread_pool.h</a> строка <a class="el" href="thread__pool_8h_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a052b07a3f9b5433b778eb783e4eaecfd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t thread_pool::getThreadsSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="thread__pool_8h_source.html">thread_pool.h</a> строка <a class="el" href="thread__pool_8h_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li><a class="el" href="thread__pool_8h_source.html">thread_pool.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по SimpleHTTPServer. Последние изменения: Пн 1 Окт 2018 20:23:01. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SimpleHTTPServer: Структура http::server::request</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SimpleHTTPServer
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacehttp.html">http</a></li><li class="navelem"><a class="el" href="namespacehttp_1_1server.html">server</a></li><li class="navelem"><a class="el" href="structhttp_1_1server_1_1request.html">request</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structhttp_1_1server_1_1request-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Структура http::server::request</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A request received from a client.  
+ <a href="structhttp_1_1server_1_1request.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="request_8h_source.html">request.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса http::server::request:</div>
+<div class="dyncontent">
+<div class="center"><img src="structhttp_1_1server_1_1request__coll__graph.png" border="0" usemap="#http_1_1server_1_1request_coll__map" alt="Collaboration graph"/></div>
+<map name="http_1_1server_1_1request_coll__map" id="http_1_1server_1_1request_coll__map">
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:af34fac6ff4957cef539ff893dad27f65"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp_1_1server_1_1request.html#af34fac6ff4957cef539ff893dad27f65">method</a></td></tr>
+<tr class="separator:af34fac6ff4957cef539ff893dad27f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42621446fc15d7b7a4274a85fde21aa2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp_1_1server_1_1request.html#a42621446fc15d7b7a4274a85fde21aa2">uri</a></td></tr>
+<tr class="separator:a42621446fc15d7b7a4274a85fde21aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac19c0f71cb9568a4c90debd317eaee61"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp_1_1server_1_1request.html#ac19c0f71cb9568a4c90debd317eaee61">http_version_major</a></td></tr>
+<tr class="separator:ac19c0f71cb9568a4c90debd317eaee61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e920e2f561e34e1ba74af2bd54593a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp_1_1server_1_1request.html#a0e920e2f561e34e1ba74af2bd54593a8">http_version_minor</a></td></tr>
+<tr class="separator:a0e920e2f561e34e1ba74af2bd54593a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22884fe4e0cfe51d757f967648190d3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structhttp_1_1server_1_1header.html">header</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhttp_1_1server_1_1request.html#ae22884fe4e0cfe51d757f967648190d3">headers</a></td></tr>
+<tr class="separator:ae22884fe4e0cfe51d757f967648190d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>A request received from a client. </p>
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00015">15</a></p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a class="anchor" id="ae22884fe4e0cfe51d757f967648190d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structhttp_1_1server_1_1header.html">header</a>&gt; http::server::request::headers</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00021">21</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac19c0f71cb9568a4c90debd317eaee61"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int http::server::request::http_version_major</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a0e920e2f561e34e1ba74af2bd54593a8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int http::server::request::http_version_minor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af34fac6ff4957cef539ff893dad27f65"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string http::server::request::method</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a42621446fc15d7b7a4274a85fde21aa2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string http::server::request::uri</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="request_8h_source.html">request.h</a> строка <a class="el" href="request_8h_source.html#l00018">18</a></p>
+
+<p>Используется в <a class="el" href="request__handler_8cpp_source.html#l00017">http::server::request_handler::handle_request()</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li><a class="el" href="request_8h_source.html">request.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по SimpleHTTPServer. Последние изменения: Пн 1 Окт 2018 20:23:01. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

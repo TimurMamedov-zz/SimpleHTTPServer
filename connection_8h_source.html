@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SimpleHTTPServer: Исходный файл connection.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SimpleHTTPServer
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">connection.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="connection_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HTTP_CONNECTION_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HTTP_CONNECTION_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;boost/asio.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="reply_8h.html">reply.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="request_8h.html">request.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="request__handler_8h.html">request_handler.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="request__parser_8h.html">request_parser.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="threadsafe__queue_8h.html">threadsafe_queue.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>http {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>server {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>connection_manager;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classhttp_1_1server_1_1connection.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhttp_1_1server_1_1connection.html">connection</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        : <span class="keyword">public</span> std::enable_shared_from_this&lt;connection&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classhttp_1_1server_1_1connection.html#aabd1a84392b2eea9171f25d319eae9da">connection</a>(<span class="keyword">const</span> <a class="code" href="classhttp_1_1server_1_1connection.html">connection</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classhttp_1_1server_1_1connection.html">connection</a>&amp; <a class="code" href="classhttp_1_1server_1_1connection.html#a1b721528c59356299d9b5ea3ce31a27d">operator=</a>(<span class="keyword">const</span> <a class="code" href="classhttp_1_1server_1_1connection.html">connection</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classhttp_1_1server_1_1connection.html#aabd1a84392b2eea9171f25d319eae9da">connection</a>(boost::asio::ip::tcp::socket socket,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                        <a class="code" href="classhttp_1_1server_1_1connection__manager.html">connection_manager</a>&amp; manager, <a class="code" href="classhttp_1_1server_1_1request__handler.html">request_handler</a>&amp; handler,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                        <a class="code" href="classThreadSave__Queue.html">ThreadSave_Queue</a>&lt;std::function&lt;<span class="keywordtype">void</span>()&gt; &gt;&amp; queue_);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classhttp_1_1server_1_1connection.html#a5f03df3dc2ef188842942444b7adf54f">start</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classhttp_1_1server_1_1connection.html#a7b8e7d2c99d3c9660242227dfadeea49">stop</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> do_read();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> do_write();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    boost::asio::ip::tcp::socket socket_;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classhttp_1_1server_1_1connection__manager.html">connection_manager</a>&amp; connection_manager_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classhttp_1_1server_1_1request__handler.html">request_handler</a>&amp; request_handler_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::array&lt;char, 8192&gt; buffer_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="structhttp_1_1server_1_1request.html">request</a> request_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classhttp_1_1server_1_1request__parser.html">request_parser</a> request_parser_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="structhttp_1_1server_1_1reply.html">reply</a> reply_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classThreadSave__Queue.html">ThreadSave_Queue&lt;std::function&lt;void()&gt;</a> &gt;&amp; queue;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="namespacehttp_1_1server.html#accc31ee3bc2700e204a703b84261c5f3">   73</a></span>&#160;<span class="keyword">typedef</span> std::shared_ptr&lt;connection&gt; <a class="code" href="namespacehttp_1_1server.html#accc31ee3bc2700e204a703b84261c5f3">connection_ptr</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace server</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <span class="comment">// namespace http</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif // HTTP_CONNECTION_HPP</span></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection_html_a1b721528c59356299d9b5ea3ce31a27d"><div class="ttname"><a href="classhttp_1_1server_1_1connection.html#a1b721528c59356299d9b5ea3ce31a27d">http::server::connection::operator=</a></div><div class="ttdeci">connection &amp; operator=(const connection &amp;)=delete</div></div>
+<div class="ttc" id="reply_8h_html"><div class="ttname"><a href="reply_8h.html">reply.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection_html_a5f03df3dc2ef188842942444b7adf54f"><div class="ttname"><a href="classhttp_1_1server_1_1connection.html#a5f03df3dc2ef188842942444b7adf54f">http::server::connection::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start the first asynchronous operation for the connection. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00020">connection.cpp:20</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection_html_a7b8e7d2c99d3c9660242227dfadeea49"><div class="ttname"><a href="classhttp_1_1server_1_1connection.html#a7b8e7d2c99d3c9660242227dfadeea49">http::server::connection::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop all asynchronous operations associated with the connection. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00025">connection.cpp:25</a></div></div>
+<div class="ttc" id="request__parser_8h_html"><div class="ttname"><a href="request__parser_8h.html">request_parser.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection_html_aabd1a84392b2eea9171f25d319eae9da"><div class="ttname"><a href="classhttp_1_1server_1_1connection.html#aabd1a84392b2eea9171f25d319eae9da">http::server::connection::connection</a></div><div class="ttdeci">connection(const connection &amp;)=delete</div></div>
+<div class="ttc" id="threadsafe__queue_8h_html"><div class="ttname"><a href="threadsafe__queue_8h.html">threadsafe_queue.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1request__handler_html"><div class="ttname"><a href="classhttp_1_1server_1_1request__handler.html">http::server::request_handler</a></div><div class="ttdoc">The common handler for all incoming requests. </div><div class="ttdef"><b>Definition:</b> <a href="request__handler_8h_source.html#l00016">request_handler.h:16</a></div></div>
+<div class="ttc" id="namespacehttp_1_1server_html_accc31ee3bc2700e204a703b84261c5f3"><div class="ttname"><a href="namespacehttp_1_1server.html#accc31ee3bc2700e204a703b84261c5f3">http::server::connection_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; connection &gt; connection_ptr</div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00073">connection.h:73</a></div></div>
+<div class="ttc" id="request__handler_8h_html"><div class="ttname"><a href="request__handler_8h.html">request_handler.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection__manager_html"><div class="ttname"><a href="classhttp_1_1server_1_1connection__manager.html">http::server::connection_manager</a></div><div class="ttdoc">Manages open connections so that they may be cleanly stopped when the server needs to shut down...</div><div class="ttdef"><b>Definition:</b> <a href="connection__manager_8h_source.html#l00014">connection_manager.h:14</a></div></div>
+<div class="ttc" id="classThreadSave__Queue_html"><div class="ttname"><a href="classThreadSave__Queue.html">ThreadSave_Queue</a></div><div class="ttdoc">Thread save queue for thread pool. </div><div class="ttdef"><b>Definition:</b> <a href="threadsafe__queue_8h_source.html#l00016">threadsafe_queue.h:16</a></div></div>
+<div class="ttc" id="structhttp_1_1server_1_1reply_html"><div class="ttname"><a href="structhttp_1_1server_1_1reply.html">http::server::reply</a></div><div class="ttdoc">A reply to be sent to a client. </div><div class="ttdef"><b>Definition:</b> <a href="reply_8h_source.html#l00016">reply.h:16</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1connection_html"><div class="ttname"><a href="classhttp_1_1server_1_1connection.html">http::server::connection</a></div><div class="ttdoc">Class represents a single connection from a client. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8h_source.html#l00024">connection.h:24</a></div></div>
+<div class="ttc" id="request_8h_html"><div class="ttname"><a href="request_8h.html">request.h</a></div></div>
+<div class="ttc" id="classhttp_1_1server_1_1request__parser_html"><div class="ttname"><a href="classhttp_1_1server_1_1request__parser.html">http::server::request_parser</a></div><div class="ttdoc">Parser for incoming requests. </div><div class="ttdef"><b>Definition:</b> <a href="request__parser_8h_source.html#l00015">request_parser.h:15</a></div></div>
+<div class="ttc" id="structhttp_1_1server_1_1request_html"><div class="ttname"><a href="structhttp_1_1server_1_1request.html">http::server::request</a></div><div class="ttdoc">A request received from a client. </div><div class="ttdef"><b>Definition:</b> <a href="request_8h_source.html#l00015">request.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по SimpleHTTPServer. Последние изменения: Пн 1 Окт 2018 20:23:01. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
