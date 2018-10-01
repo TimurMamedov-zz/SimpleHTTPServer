@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
         po::store(po::parse_command_line(argc, argv, desc), vm);
         po::notify(vm);
 
-#if !defined(WIN32) && !defined(YOUR_IOS_MACRO_HERE)
+#if defined(unix) || defined(__unix__) || defined(__unix)
         // создаем потомка
         auto pid = fork();
 

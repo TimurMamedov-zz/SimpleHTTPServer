@@ -9,7 +9,10 @@ namespace server {
 struct reply;
 struct request;
 
-/// The common handler for all incoming requests.
+/*!
+    \brief The common handler for all incoming requests.
+*/
+
 class request_handler
 {
 public:

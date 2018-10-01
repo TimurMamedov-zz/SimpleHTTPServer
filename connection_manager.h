@@ -7,8 +7,10 @@
 namespace http {
 namespace server {
 
-/// Manages open connections so that they may be cleanly stopped when the server
-/// needs to shut down.
+/*!
+    \brief Manages open connections so that they may be cleanly stopped when the server needs to shut down.
+*/
+
 class connection_manager
 {
 public:

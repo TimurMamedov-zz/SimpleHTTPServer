@@ -9,7 +9,10 @@
 namespace http {
 namespace server {
 
-/// A reply to be sent to a client.
+/*!
+    \brief A reply to be sent to a client.
+*/
+
 struct reply
 {
     /// The status of the reply.

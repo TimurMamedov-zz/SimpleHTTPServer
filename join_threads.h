@@ -6,6 +6,10 @@
 #include <condition_variable>
 #include "threadsafe_queue.h"
 
+/*!
+    \brief Join all threads in correct way
+*/
+
 class join_threads
 {
 public:

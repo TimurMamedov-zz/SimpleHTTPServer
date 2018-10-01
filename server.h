@@ -12,7 +12,9 @@
 namespace http {
 namespace server {
 
-/// The top-level class of the HTTP server.
+/*!
+    \brief The top-level class of the HTTP server.
+*/
 class server
 {
 public:

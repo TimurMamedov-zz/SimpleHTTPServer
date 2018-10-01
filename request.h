@@ -8,7 +8,10 @@
 namespace http {
 namespace server {
 
-/// A request received from a client.
+/*!
+    \brief A request received from a client.
+*/
+
 struct request
 {
   std::string method;

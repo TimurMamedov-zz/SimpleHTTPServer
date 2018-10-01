@@ -8,6 +8,10 @@
 #include <condition_variable>
 #include <atomic>
 
+/*!
+    \brief Thread save queue for thread pool
+*/
+
 template<typename T>
 class ThreadSave_Queue
 {

@@ -8,7 +8,10 @@ namespace server {
 
 struct request;
 
-/// Parser for incoming requests.
+/*!
+    \brief Parser for incoming requests.
+*/
+
 class request_parser
 {
 public:

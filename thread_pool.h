@@ -1,6 +1,10 @@
 #pragma once
 #include "join_threads.h"
 
+/*!
+    \brief Thread pool for all connections
+*/
+
 class thread_pool
 {
 public:

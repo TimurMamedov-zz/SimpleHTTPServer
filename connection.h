@@ -17,7 +17,10 @@ namespace server {
 
 class connection_manager;
 
-/// Represents a single connection from a client.
+/*!
+    \brief Class represents a single connection from a client.
+*/
+
 class connection
         : public std::enable_shared_from_this<connection>
 {
