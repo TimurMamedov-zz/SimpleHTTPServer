@@ -70,7 +70,7 @@
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classhttp_1_1server_1_1connection__manager.html#a286d83b5b2758cf8d178379f38c266d8">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classhttp_1_1server_1_1connection__manager.html#a286d83b5b2758cf8d178379f38c266d8">connection_manager::stop_all</a>()</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> c: connections_)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp;&amp; c: connections_)</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        c-&gt;stop();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    connections_.clear();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
@@ -92,7 +92,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по SimpleHTTPServer. Последние изменения: Пн 1 Окт 2018 20:23:01. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по SimpleHTTPServer. Последние изменения: Ср 3 Окт 2018 10:55:58. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
