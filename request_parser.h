@@ -32,12 +32,17 @@ public:
     std::tuple<result_type, InputIterator> parse(request& req,
                                                  InputIterator begin, InputIterator end)
     {
-        while (begin != end)
+        try
         {
-            result_type result = consume(req, *begin++);
-            if (result == good || result == bad)
-                return std::make_tuple(result, begin);
+            while (begin != end)
+            {
+                result_type result = consume(req, *begin++);
+                if (result == good || result == bad)
+                    return std::make_tuple(result, begin);
+            }
+
         }
+        catch(...){}
         return std::make_tuple(indeterminate, begin);
     }
 
