@@ -69,9 +69,8 @@
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Переменные</h2></td></tr>
-<tr class="memitem:a45b8af69a248bd438b985081226300a7"><td class="memItemLeft" align="right" valign="top">struct <br class="typebreak"/>
-<a class="el" href="structhttp_1_1server_1_1mime__types_1_1mapping.html">http::server::mime_types::mapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehttp_1_1server_1_1mime__types.html#a45b8af69a248bd438b985081226300a7">mappings</a> []</td></tr>
-<tr class="separator:a45b8af69a248bd438b985081226300a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f96339253d5b4b02d15f388a39b973"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structhttp_1_1server_1_1mime__types_1_1mapping.html">mapping</a>, 5 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehttp_1_1server_1_1mime__types.html#a52f96339253d5b4b02d15f388a39b973">mappings</a></td></tr>
+<tr class="separator:a52f96339253d5b4b02d15f388a39b973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Функции</h2>
 <a class="anchor" id="aaa3cd5827dc485ab288a3c446ef023bc"></a>
@@ -90,41 +89,40 @@
 
 <p>Convert a file extension into a MIME type. </p>
 
-<p>См. определение в файле <a class="el" href="mime__types_8cpp_source.html">mime_types.cpp</a> строка <a class="el" href="mime__types_8cpp_source.html#l00020">20</a></p>
+<p>См. определение в файле <a class="el" href="mime__types_8cpp_source.html">mime_types.cpp</a> строка <a class="el" href="mime__types_8cpp_source.html#l00021">21</a></p>
 
-<p>Перекрестные ссылки <a class="el" href="namespacehttp_1_1server_1_1mime__types.html#a45b8af69a248bd438b985081226300a7">mappings</a>.</p>
+<p>Перекрестные ссылки <a class="el" href="mime__types_8cpp_source.html#l00015">mappings</a>.</p>
 
 <p>Используется в <a class="el" href="request__handler_8cpp_source.html#l00017">http::server::request_handler::handle_request()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Переменные</h2>
-<a class="anchor" id="a45b8af69a248bd438b985081226300a7"></a>
+<a class="anchor" id="a52f96339253d5b4b02d15f388a39b973"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="structhttp_1_1server_1_1mime__types_1_1mapping.html">http::server::mime_types::mapping</a>  http::server::mime_types::mappings[]</td>
+          <td class="memname">std::array&lt;<a class="el" href="structhttp_1_1server_1_1mime__types_1_1mapping.html">mapping</a>, 5&gt; http::server::mime_types::mappings</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Инициализатор</b><div class="fragment"><div class="line">=</div>
-<div class="line">{</div>
-<div class="line">{ <span class="stringliteral">&quot;gif&quot;</span>, <span class="stringliteral">&quot;image/gif&quot;</span> },</div>
-<div class="line">{ <span class="stringliteral">&quot;htm&quot;</span>, <span class="stringliteral">&quot;text/html&quot;</span> },</div>
-<div class="line">{ <span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;text/html&quot;</span> },</div>
-<div class="line">{ <span class="stringliteral">&quot;jpg&quot;</span>, <span class="stringliteral">&quot;image/jpeg&quot;</span> },</div>
-<div class="line">{ <span class="stringliteral">&quot;png&quot;</span>, <span class="stringliteral">&quot;image/png&quot;</span> }</div>
-<div class="line">}</div>
+<b>Инициализатор</b><div class="fragment"><div class="line">{mapping{ <span class="stringliteral">&quot;gif&quot;</span>, <span class="stringliteral">&quot;image/gif&quot;</span> },</div>
+<div class="line">                                mapping{ <span class="stringliteral">&quot;htm&quot;</span>, <span class="stringliteral">&quot;text/html&quot;</span> },</div>
+<div class="line">                                mapping{ <span class="stringliteral">&quot;html&quot;</span>, <span class="stringliteral">&quot;text/html&quot;</span> },</div>
+<div class="line">                                mapping{ <span class="stringliteral">&quot;jpg&quot;</span>, <span class="stringliteral">&quot;image/jpeg&quot;</span> },</div>
+<div class="line">                                mapping{ <span class="stringliteral">&quot;png&quot;</span>, <span class="stringliteral">&quot;image/png&quot;</span> }}</div>
 </div><!-- fragment -->
-<p>Используется в <a class="el" href="mime__types_8cpp_source.html#l00020">extension_to_type()</a>.</p>
+<p>См. определение в файле <a class="el" href="mime__types_8cpp_source.html">mime_types.cpp</a> строка <a class="el" href="mime__types_8cpp_source.html#l00015">15</a></p>
+
+<p>Используется в <a class="el" href="mime__types_8cpp_source.html#l00021">extension_to_type()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по SimpleHTTPServer. Последние изменения: Чт 4 Окт 2018 17:57:53. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по SimpleHTTPServer. Последние изменения: Чт 11 Окт 2018 09:00:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
