@@ -1,4 +1,6 @@
 #include "mime_types.h"
+#include <algorithm>
+#include <array>
 
 namespace http {
 namespace server {
@@ -8,24 +10,23 @@ struct mapping
 {
     const char* extension;
     const char* mime_type;
-} mappings[] =
-{
-{ "gif", "image/gif" },
-{ "htm", "text/html" },
-{ "html", "text/html" },
-{ "jpg", "image/jpeg" },
-{ "png", "image/png" }
 };
+
+std::array<mapping, 5> mappings{mapping{ "gif", "image/gif" },
+                                mapping{ "htm", "text/html" },
+                                mapping{ "html", "text/html" },
+                                mapping{ "jpg", "image/jpeg" },
+                                mapping{ "png", "image/png" }};
 
 std::string extension_to_type(const std::string& extension)
 {
-    for (mapping m: mappings)
+    auto iter = std::find_if(mappings.begin(), mappings.end(), [&extension](const mapping& m)
     {
-        if (m.extension == extension)
-        {
-            return m.mime_type;
-        }
-    }
+        return m.extension == extension;
+    });
+
+    if(iter != mappings.end())
+        return iter->mime_type;
 
     return "text/plain";
 }

@@ -9,11 +9,6 @@ request_parser::request_parser()
 {
 }
 
-void request_parser::reset()
-{
-    state_ = method_start;
-}
-
 request_parser::result_type request_parser::consume(request& req, char input)
 {
     switch (state_)

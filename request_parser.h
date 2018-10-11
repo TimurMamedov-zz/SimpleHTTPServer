@@ -18,9 +18,6 @@ public:
     /// Construct ready to parse the request method.
     request_parser();
 
-    /// Reset to initial parser state.
-    void reset();
-
     /// Result of parse.
     enum result_type { good, bad, indeterminate };
 
